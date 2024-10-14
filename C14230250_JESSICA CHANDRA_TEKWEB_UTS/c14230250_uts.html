@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C14230250_UTS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="grid grid-cols-1 sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-3 gap-4 m-4">
+        <div class="flex flex-col shadow-md w-full">
+            <div class="w-full">
+                <img class="w-full" src="images/burger.jpg" alt="">
+            </div>
+            <div class="m-4">
+                <h2 id="burger" class="font-semibold text-sm sm:text-sm md:text-md lg:text-lg">burger</h2>
+                <h4 id="burger-price" class="text-sm sm:text-md md:text-lg lg:text-md">12.99</h4>
+            </div>
+            <div class="mx-4 mb-6 flex flex-row">
+                <div class="justify-start flex flex-row">
+                    <button class="px-[3px] py-[1px] bg-blue-600 text-white rounded-[2px]" id="minus"
+                        onclick="change('-', 'quantityBurger', 'burger-price', 'total-priceBurger')">-</button>
+                    <input class="text-center mx-auto justify-center w-[30px]" type="number" id="quantityBurger" min="0"
+                        value="0" readonly placeholder="">
+                    <button class="px-[1px] py-[1px] bg-blue-600 text-white rounded-[2px]" id="add"
+                        onclick="change('+', 'quantityBurger', 'burger-price', 'total-priceBurger')">+</button>
+                </div>
+                <div id="total-priceBurger" class=" px-4 ml-auto bg-blue-600 text-white font-bold rounded-[4px]">
+                    $0
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col shadow-md w-full">
+            <div class="w-full">
+                <img class="w-full" src="images/pizza.jpg" alt="">
+            </div>
+            <div class="m-4">
+                <h2 id="pizza" class="font-semibold text-sm sm:text-sm md:text-md lg:text-lg">Pizza</h2>
+                <h4 id="pizza-price" value="8.99" class="text-sm sm:text-md md:text-lg lg:text-md">8.99</h4>
+            </div>
+            <div id="pizza-bottom" class="mx-4 mb-6 flex flex-row">
+                <div class="justify-start flex flex-row">
+                    <button class="px-[3px] py-[1px] bg-blue-600 text-white rounded-[2px]" id="minus"
+                        onclick="change('-', 'quantityPizza', 'pizza-price', 'total-pricePizza')">-</button>
+                    <input class="text-center mx-auto justify-center w-[30px]" type="number" id="quantityPizza" min="0"
+                        value="0" readonly placeholder="">
+                    <button class="px-[1px] py-[1px] bg-blue-600 text-white rounded-[2px]" id="add"
+                        onclick="change('+', 'quantityPizza', 'pizza-price', 'total-pricePizza')">+</button>
+                </div>
+                <div id="total-pricePizza" class=" px-4 ml-auto bg-blue-600 text-white font-bold rounded-[4px]">
+                    $0
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col shadow-md w-full">
+            <div class="w-full">
+                <img class="w-full" src="images/chicken.jpg" alt="">
+            </div>
+            <div class="m-4">
+                <h2 id="chicken" class="font-semibold text-sm sm:text-sm md:text-md lg:text-lg">chicken</h2>
+                <h4 id="chicken-price" value="8.99" class="text-sm sm:text-md md:text-lg lg:text-md">8.99</h4>
+            </div>
+            <div id="chicken-bottom" class="mx-4 mb-6 flex flex-row">
+                <div class="justify-start flex flex-row">
+                    <button class="px-[3px] py-[1px] bg-blue-600 text-white rounded-[2px]" id="minus"
+                        onclick="change('-', 'quantityChicken', 'chicken-price', 'total-priceChicken')">-</button>
+                    <input class="text-center mx-auto justify-center w-[30px]" type="number" id="quantityChicken"
+                        min="0" value="0" readonly placeholder="">
+                    <button class="px-[1px] py-[1px] bg-blue-600 text-white rounded-[2px]" id="add"
+                        onclick="change('+', 'quantityChicken', 'fanta-price', 'total-priceChicken')">+</button>
+                </div>
+                <div id="total-priceChicken" class=" px-4 ml-auto bg-blue-600 text-white font-bold rounded-[4px]">
+                    $0
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col shadow-md w-full">
+            <div class="w-full">
+                <img class="w-full object-contain" src="images/fanta.jpg" alt="">
+            </div>
+            <div class="m-4">
+                <h2 id="fanta" class="font-semibold text-sm sm:text-sm md:text-md lg:text-lg">fanta</h2>
+                <h4 id="fanta-price" value="8.99" class="text-sm sm:text-md md:text-lg lg:text-md">8.99</h4>
+            </div>
+            <div id="fanta-bottom" class="mx-4 mb-6 flex flex-row">
+                <div class="justify-start flex flex-row">
+                    <button class="px-[3px] py-[1px] bg-blue-600 text-white rounded-[2px]" id="minus"
+                        onclick="change('-', 'quantityFanta', 'fanta-price', 'total-priceFanta')">-</button>
+                    <input class="text-center mx-auto justify-center w-[30px]" type="number" id="quantityFanta" min="0"
+                        value="0" readonly placeholder="">
+                    <button class="px-[1px] py-[1px] bg-blue-600 text-white rounded-[2px]" id="add"
+                        onclick="change('+', 'quantityFanta', 'fanta-price', 'total-priceFanta')">+</button>
+                </div>
+                <div id="total-priceFanta" class=" px-4 ml-auto bg-blue-600 text-white font-bold rounded-[4px]">
+                    $0
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col shadow-md w-full">
+            <div class="w-full">
+                <img class="w-full" src="images/sprite.jpg" alt="">
+            </div>
+            <div class="m-4">
+                <h2 id="sprite" class="font-semibold text-sm sm:text-sm md:text-md lg:text-lg">sprite</h2>
+                <h4 id="sprite-price" value="8.99" class="text-sm sm:text-md md:text-lg lg:text-md">8.99</h4>
+            </div>
+            <div id="sprite-bottom" class="mx-4 mb-6 flex flex-row">
+                <div class="justify-start flex flex-row">
+                    <button class="px-[3px] py-[1px] bg-blue-600 text-white rounded-[2px]" id="minus"
+                        onclick="change('-', 'quantitySprite', 'sprite-price', 'total-priceSprite')">-</button>
+                    <input class="text-center mx-auto justify-center w-[30px]" type="number" id="quantitySprite" min="0"
+                        value="0" readonly placeholder="">
+                    <button class="px-[1px] py-[1px] bg-blue-600 text-white rounded-[2px]" id="add"
+                        onclick="change('+', 'quantitySprite', 'fanta-price', 'total-priceSprite')">+</button>
+                </div>
+                <div id="total-priceSprite" class=" px-4 ml-auto bg-blue-600 text-white font-bold rounded-[4px]">
+                    $0
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col shadow-md w-full">
+            <div class="w-full">
+                <img class="w-full" src="images/cola.jpg" alt="">
+            </div>
+            <div class="m-4">
+                <h2 id="cola" class="font-semibold text-sm sm:text-sm md:text-md lg:text-lg">cola</h2>
+                <h4 id="cola-price" value="8.99" class="text-sm sm:text-md md:text-lg lg:text-md">8.99</h4>
+            </div>
+            <div id="cola-bottom" class="mx-4 mb-6 flex flex-row">
+                <div class="justify-start flex flex-row">
+                    <button class="px-[3px] py-[1px] bg-blue-600 text-white rounded-[2px]" id="minus"
+                        onclick="change('-', 'quantityCola', 'cola-price', 'total-priceCola')">-</button>
+                    <input class="text-center mx-auto justify-center w-[30px]" type="number" id="quantityCola" min="0"
+                        value="0" readonly placeholder="">
+                    <button class="px-[1px] py-[1px] bg-blue-600 text-white rounded-[2px]" id="add"
+                        onclick="change('+', 'quantityCola', 'cola-price', 'total-priceCola')">+</button>
+                </div>
+                <div id="total-priceCola" class=" px-4 ml-auto bg-blue-600 text-white font-bold rounded-[4px]">
+                    $0
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        th {
+            padding: 40px;
+        }
+
+        /* tr{
+            border-bottom: 2px;
+            border-color: black;
+        } */
+    </style>
+    <div class="w-[80%] mx-auto shadow-lg">
+        <table class="table-auto">
+            <thead>
+                <tr>
+                    <th>Food Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="rows">
+               
+            </tbody>
+        </table>
+        <div class="absolute mb-auto mr-auto">
+            <h1>Grand Total</h1>
+            <h1 id="totalAllItems"></h1>
+        </div>
+    </div>
+    <div class="flex justify-center mt-10 w-full">
+        <button class="px-40 py-2 bg-blue-600 text-white rounded-[10px]" onclick="showModal()">CHECKOUT</button>
+    </div>
+
+    <div id="modal"
+        class="opacity-0 pointer-events-none w-screen h-screen flex items-center justify-center top-0 left-0 bg-black bg-opacity-25 fixed z-50">
+        <div class="bg-white w-[50%] h-[50%] rounded-2xl shadow-lg">
+            <div class="flex justify-center items-center">
+                <h1 class="mt-10 font-bold text-xl sm:text-xl md:text-xl lg:text-2xl">ORDERING YOUR ORDERS!!</h1>
+            </div>
+            <div class="flex items-center justify-center">
+                <button class="px-20 py-2 bg-blue-600 mt-20 rounded-2xl" onclick="hideModal()">close window</button>
+            </div>
+
+        </div>
+        <div></div>
+    </div>
+
+    <script>
+        function showModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100', 'pointer-events-auto');
+
+        }
+        function hideModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.remove('opacity-100', 'pointer-events-auto');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            document.getElementById('quantityBurger').value = '';
+            document.getElementById('quantityPizza').value = '';
+            document.getElementById('quantityChicken').value = '';
+            document.getElementById('quantityFanta').value = '';
+            document.getElementById('quantitySprite').value = '';
+            document.getElementById('quantityCola').value = '';
+        }
+    </script>
+
+
+    <script>
+        function change(operator, text_id, itemPrice_id, displayPrice_id) {
+            if (operator == "+") {
+                document.getElementById(text_id).value = parseInt(document.getElementById(text_id).value) + 1;
+            }
+
+            if (operator == "-") {
+                let val = parseInt(document.getElementById(text_id).value) - 1;
+                if (val >= 0) {
+                    document.getElementById(text_id).value = val;
+                }
+            }
+            val = parseInt(document.getElementById(text_id).value);
+            // const coba = parseFloat(document.getElementById(itemPrice_id).innerText);
+            // console.log(coba);
+            let totalPrize = parseFloat(document.getElementById(itemPrice_id).innerText) * val;
+            document.getElementById(displayPrice_id).innerText = '$'.concat(totalPrize);
+
+        const qtyBurger = parseInt(document.getElementById('quantityBurger').value);
+        const qtyPizza = parseInt(document.getElementById('quantityPizza').value);
+        const qtyChicken = parseInt(document.getElementById('quantityChicken').value);
+        const qtyFanta = parseInt(document.getElementById('quantityFanta').value);
+        const qtySprite = parseInt(document.getElementById('quantitySprite').value);
+        const qtyCola = parseInt(document.getElementById('quantityCola').value);
+
+        const burgerName = document.getElementById('burger').innerText;
+        const burgerPrice = document.getElementById('burger-price').innerText;
+        const totalPriceBurger = document.getElementById('total-priceBurger').innerText;
+
+        const pizzaName = document.getElementById('pizza').innerText;
+        const pizzaPrice = document.getElementById('pizza-price').innerText;
+        const totalPricePizza = document.getElementById('total-pricePizza').innerText;
+
+        const chickenName = document.getElementById('chicken').innerText;
+        const chickenPrice = document.getElementById('chicken-price').innerText;
+        const totalPriceChicken = document.getElementById('total-priceChicken').innerText;
+
+        const fantaName = document.getElementById('fanta').innerText;
+        const fantaPrice = document.getElementById('fanta-price').innerText;
+        const totalPriceFanta = document.getElementById('total-priceFanta').innerText;
+
+        const spriteName = document.getElementById('sprite').innerText;
+        const spritePrice = document.getElementById('sprite-price').innerText;
+        const totalPriceSprite = document.getElementById('total-priceSprite').innerText;
+
+        const colaName = document.getElementById('cola').innerText;
+        const colaPrice = document.getElementById('cola-price').innerText;
+        const totalPriceCola = document.getElementById('total-priceCola').innerText;
+
+        if (qtyBurger != 0) {
+            const row = `<tr>
+                    <td>${burgerName}</td>
+                    <td>${qtyBurger}</td>
+                    <td>${burgerPrice}</td>
+                    <td>${totalPriceBurger}</td>
+                 </tr>`;
+            document.getElementById('rows').innerHTML += row;
+        }
+
+        if (qtyPizza != 0) {
+            const row = `<tr>
+                    <td>${pizzaName}</td>
+                    <td>${qtyPizza}</td>
+                    <td>${pizzaPrice}</td>
+                    <td>${totalPricePizza}</td>
+                 </tr>`;
+            document.getElementById('rows').innerHTML += row;
+        }
+
+        if (qtyChicken != 0) {
+            const row = `<tr>
+                    <td>${chickenName}</td>
+                    <td>${qtyChicken}</td>
+                    <td>${chickenPrice}</td>
+                    <td>${totalPriceChicken}</td>
+                 </tr>`;
+            document.getElementById('rows').innerHTML += row;
+        }
+
+        if (qtyFanta != 0) {
+            const row = `<tr>
+                    <td>${fantaName}</td>
+                    <td>${qtyFanta}</td>
+                    <td>${fantaPrice}</td>
+                    <td>${totalPriceFanta}</td>
+                 </tr>`;
+            document.getElementById('rows').innerHTML += row;
+        }
+
+        if (qtySprite != 0) {
+            const row = `<tr>
+                    <td>${spriteName}</td>
+                    <td>${qtySprite}</td>
+                    <td>${spritePrice}</td>
+                    <td>${totalPriceSprite}</td>
+                 </tr>`;
+            document.getElementById('rows').innerHTML += row;
+        }
+
+        if (qtyCola != 0) {
+            const row = `<tr>
+                    <td>${colaName}</td>
+                    <td>${qtyCola}</td>
+                    <td>${colaPrice}</td>
+                    <td>${totalPriceCola}</td>
+                 </tr>`;
+            document.getElementById('rows').innerHTML += row;
+        }
+    }
+
+        // const totalallItemsPrices =
+    </script>
+</body>
+
+</html>
